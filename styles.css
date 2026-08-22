@@ -289,6 +289,22 @@ p {
   color: var(--accent);
 }
 
+.logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px #fff);
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px #fff);
+  opacity: 0.9;
+}
+
 .section-visual {
   width: 100%;
   height: auto;
