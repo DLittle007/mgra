@@ -82,7 +82,7 @@ body {
   min-height: 88vh;
   display: grid;
   align-items: center;
-  background: url("https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=1900&q=80")
+  background: url("assets/images/hero-main.png")
     center/cover no-repeat;
 }
 
@@ -289,6 +289,30 @@ p {
   color: var(--accent);
 }
 
+.section-visual {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  object-fit: cover;
+}
+
+.img-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.img-pair img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  object-fit: cover;
+}
+
 @media (max-width: 950px) {
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -311,7 +335,8 @@ p {
 
   .cards,
   .metrics,
-  .team-cards {
+  .team-cards,
+  .img-pair {
     grid-template-columns: 1fr;
   }
 }
