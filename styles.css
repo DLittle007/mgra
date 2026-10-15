@@ -13,6 +13,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -75,6 +79,19 @@ body {
 
 .site-nav a:hover {
   color: var(--text);
+}
+
+.site-nav a:focus-visible,
+.logo:focus-visible,
+.btn:focus-visible,
+.contact-links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+section,
+.site-footer {
+  scroll-margin-top: 90px;
 }
 
 .hero {
@@ -195,16 +212,8 @@ p {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
-}
-
-.product-grid .product-card:nth-child(4) {
-  grid-column: 1 / 2;
-}
-
-.product-grid .product-card:nth-child(5) {
-  grid-column: 2 / 3;
 }
 
 .product-card {
@@ -249,6 +258,24 @@ p {
   color: var(--muted);
   margin: 0;
   line-height: 1.5;
+}
+
+.capability-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+}
+
+.capability-list li {
+  margin-bottom: 0.65rem;
+}
+
+.capability-list li:last-child {
+  margin-bottom: 0;
+}
+
+.capability-list strong {
+  color: var(--text);
 }
 
 .cards {
@@ -400,11 +427,6 @@ p {
   .product-grid {
     grid-template-columns: 1fr 1fr;
   }
-
-  .product-grid .product-card:nth-child(4),
-  .product-grid .product-card:nth-child(5) {
-    grid-column: auto;
-  }
 }
 
 @media (max-width: 700px) {
@@ -426,9 +448,10 @@ p {
   .product-grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .product-grid .product-card:nth-child(4),
-  .product-grid .product-card:nth-child(5) {
-    grid-column: auto;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
